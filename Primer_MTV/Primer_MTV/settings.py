@@ -55,7 +55,7 @@ ROOT_URLCONF = 'Primer_MTV.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['C:/Users/Martin/OneDrive/Escritorio/Primer MVT/Primer_MTV/Primer_MTV/templates'],
+        'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

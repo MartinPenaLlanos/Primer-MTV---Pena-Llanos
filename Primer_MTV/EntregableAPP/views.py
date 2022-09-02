@@ -6,7 +6,7 @@ from EntregableAPP.forms import CursoForm, ProfeForm
 
 # Create your views here.
 
-def curso(request):
+def cursos(request):
 
     
     nombre = request.POST.get("nombre")

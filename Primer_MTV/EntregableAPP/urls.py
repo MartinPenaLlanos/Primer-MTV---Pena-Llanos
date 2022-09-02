@@ -4,13 +4,13 @@ from EntregableAPP.views import *
 
 urlpatterns = [
     
-    path("curso/", curso),
-    path("saludo/", saludo),
-    path("vista2/", vista2),
-    path("template/", template),
-    path("template2/", template2),
-    path('nombre/<nombre>', nombre),
-    path("fecha/", fecha),
-    path("familiares/", familiares),
+    path("curso/", curso, name="curso"),
+    path("saludo/", saludo, name = "saludo"),
+    path("vista2/", vista2, name = "vista2"),
+    path("template/", template, name = "template"),
+    path("template2/", template2, name="template2"),
+    path('nombre/<nombre>', nombre, name = "nombre"),
+    path("fecha/", fecha, name = "fecha"),
+    path("familiares/", familiares, name = "familiares"),
     
 ]

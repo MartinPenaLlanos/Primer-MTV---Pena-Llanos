@@ -7,11 +7,7 @@
 {% endblock %}
 
 {% block contenido_que_cambia %}
-<form action="{% url 'cursos' %}" method="POST"> {% csrf_token %}
+<h1>BIENVENIDO A LA PAGINA DE CLIENTES PLATINUM</h1>
 
-    <table>
-        {{ formulario.as_table }}
-    </table>
-    <input type="submit" value="Enviar">
-</form>
+{{ mensaje }}
 {% endblock %}

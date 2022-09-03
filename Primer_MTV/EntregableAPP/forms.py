@@ -9,5 +9,5 @@ class EmpleadosForm(forms.Form):
     nombre = forms.CharField(max_length=50)
     apellido = forms.CharField(max_length=50)
     email = forms.EmailField()
-    profesion = forms.CharField(max_length=50)
+    puesto = forms.CharField(max_length=50)
 

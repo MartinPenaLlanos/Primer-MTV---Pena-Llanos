@@ -14,6 +14,7 @@ class Empleado(models.Model):
     nombre = models.CharField(max_length=30)
     apellido = models.CharField(max_length=30)
     email = models.EmailField()
+    puesto = models.CharField(max_length=50)
 
     def __str__(self):
         return self.nombre+" "+self.apellido

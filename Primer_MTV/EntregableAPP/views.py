@@ -114,7 +114,8 @@ def empleadosForm(request):
             nombre= info["nombre"]
             apellido = info["apellido"]
             email = info["email"]
-            empleado= Empleado(nombre=nombre, apellido=apellido, email=email)
+            puesto = info["puesto"]	    	
+            empleado= Empleado(nombre=nombre, apellido=apellido, email=email, puesto=puesto)
             empleado.save()
             return render (request, "EntregableAPP/inicio.html", {"mensaje":"Empleado creado"})
     else:

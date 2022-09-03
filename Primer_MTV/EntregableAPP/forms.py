@@ -11,3 +11,8 @@ class EmpleadosForm(forms.Form):
     email = forms.EmailField()
     puesto = forms.CharField(max_length=50)
 
+class Nuevos_UsuariosForm(forms.Form):
+    nombre = forms.CharField(max_length=50)
+    apellido = forms.CharField(max_length=50)
+    email = forms.EmailField()
+    password = forms.CharField(max_length=50)

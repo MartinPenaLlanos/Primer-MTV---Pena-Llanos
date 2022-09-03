@@ -2,7 +2,7 @@ from django.shortcuts import render
 from .models import *
 from django.http import HttpResponse
 
-from EntregableAPP.forms import ClientesForm, EmpleadosForm
+from EntregableAPP.forms import ClientesForm, EmpleadosForm, Nuevos_UsuariosForm
 
 # Create your views here.
 
@@ -124,6 +124,44 @@ def empleadosForm(request):
 
 
 
+def nuevosusuarios(request):
+    if request.method=="POST":
+        form=Nuevos_UsuariosForm(request.POST)
+        print("-------------------------------")
+        print(form)
+        print("-------------------------------")
+        if form.is_valid():
+            informacion=form.cleaned_data
+            print(informacion)
+            nombre=informacion["nombre"]
+            apellido=informacion["apellido"]
+            email=informacion["email"]
+            password=informacion["password"]
+            usuario=Nuevos_Usuarios(nombre=nombre, apellido=apellido, email=email, password=password)
+            usuario.save()
+            return render (request, "EntregableAPP/inicio.html")
+
+    else:
+        formulario=Nuevos_UsuariosForm()
+        return render (request, "EntregableAPP/nuevosusuariosForm.html", {"formulario":formulario})
+
+
+def nuevos_usuariosForm(request):
+
+    if request.method=="POST":
+        form= Nuevos_UsuariosForm(request.POST)
+        if form.is_valid():
+            info= form.cleaned_data
+            nombre= info["nombre"]
+            apellido = info["apellido"]
+            email = info["email"]
+            password = info["password"]	    	
+            usuario= Nuevos_Usuarios(nombre=nombre, apellido=apellido, email=email, password=password)
+            usuario.save()
+            return render (request, "EntregableAPP/inicio.html", {"mensaje":"Usuario creado"})
+    else:
+        form= Nuevos_UsuariosForm()
+    return render(request, "EntregableAPP/nuevosusuariosForm.html", {"formulario":form})
 
 
 

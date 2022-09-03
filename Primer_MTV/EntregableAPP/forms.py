@@ -1,10 +1,11 @@
 from django import forms
 
-class CursoForm(forms.Form):
+class ClientesForm(forms.Form):
     nombre = forms.CharField(max_length=50)
-    comision = forms.IntegerField()
+    dni = forms.IntegerField()
+    categoria = forms.CharField(max_length=50)
     
-class ProfeForm(forms.Form):
+class EmpleadosForm(forms.Form):
     nombre = forms.CharField(max_length=50)
     apellido = forms.CharField(max_length=50)
     email = forms.EmailField()

@@ -2,26 +2,33 @@ from django.shortcuts import render
 from .models import *
 from django.http import HttpResponse
 
-from EntregableAPP.forms import CursoForm, ProfeForm
+from EntregableAPP.forms import ClientesForm, EmpleadosForm
 
 # Create your views here.
 
-def cursos(request):
+def cliente(request):
 
     
     nombre = request.POST.get("nombre")
-    comision = request.POST.get("comision")
-    curso = Curso(nombre=nombre, comision=comision)
-    curso.save()
-    curso=Curso(nombre="curso creado en el ejemplo", comision=0)
-    print("CREANDO CURSO")
-    curso.save()
+    dni = request.POST.get("dni")
+    categoria = request.POST.get("categoria")
+    cliente = cliente(nombre=nombre, dni=dni, categoria=categoria)
+    cliente.save()
+    cliente=cliente(nombre="curso creado en el ejemplo", dni=0, categoria="black")
+    print("CREANDO CLIENTE")
+    cliente.save()
     
-    texto=f"curso creado"
+    texto=f"cliente creado"
     return HttpResponse(texto)
 
-def clientes(request):
-    return render (request, "EntregableAPP/clientes.html")
+def clientes_black(request):
+    return render (request, "EntregableAPP/clientes_black.html")
+
+def clientes_gold(request):
+    return render (request, "EntregableAPP/clientes_gold.html")
+
+def clientes_platinum(request):
+    return render (request, "EntregableAPP/clientes_platinum.html")
 
 def empleados(request):
     return render (request, "EntregableAPP/empleados.html")
@@ -29,23 +36,14 @@ def empleados(request):
 def inicio(request):
     return render (request, "EntregableAPP/inicio.html")
 
-def cursos(request):
-    return render (request, "EntregableAPP/cursos.html")
-
-def estudiantes(request):
-    return render (request, "EntregableAPP/estudiantes.html")
-
-def profesores(request):
-    return render (request, "EntregableAPP/profesores.html")
-
-def entregables(request):
-    return render (request, "EntregableAPP/entregables.html")
+def busqueda(request):
+    return render (request, "EntregableAPP/busqueda.html")
 
 
 
-def cursos(request):
+def clientes(request):
     if request.method=="POST":
-        form=CursoForm(request.POST)
+        form=ClientesForm(request.POST)
         print("-------------------------------")
         print(form)
         print("-------------------------------")
@@ -53,45 +51,44 @@ def cursos(request):
             informacion=form.cleaned_data
             print(informacion)
             nombre=informacion["nombre"]
-            comision=informacion["comision"]
-            curso=Curso(nombre=nombre, comision=comision)
+            dni=informacion["dni"]
+            categoria=informacion["categoria"]
+            curso=Clientes(nombre=nombre, dni=dni, categoria=categoria)
             curso.save()
             return render (request, "EntregableAPP/inicio.html")
 
     else:
-        formulario=CursoForm()
-        return render (request, "AppCoder/cursos.html", {"formulario":formulario})
+        formulario=ClientesForm()
+        return render (request, "EntregableAPP/clientes.html", {"formulario":formulario})
 
 
-def profeFormulario(request):
+#def profeFormulario(request):
+#
+#    if request.method=="POST":
+#        form= ProfeForm(request.POST)
+#        if form.is_valid():
+#            info= form.cleaned_data
+#            nombre= info["nombre"]
+#            apellido= info["apellido"]
+#            email= info["email"]
+#            profesion= info["profesion"]
+#            profe= Profesor(nombre=nombre, apellido=apellido, email=email, profesion=profesion)
+#            profe.save()
+#            return render (request, "EntregableAPP/inicio.html", {"mensaje":"Profesor creado"})
+#    else:
+#        form= ProfeForm()
+#    return render(request, "EntregableAPP/profeForm.html", {"formulario":form})
 
-    if request.method=="POST":
-        form= ProfeForm(request.POST)
-        if form.is_valid():
-            info= form.cleaned_data
-            nombre= info["nombre"]
-            apellido= info["apellido"]
-            email= info["email"]
-            profesion= info["profesion"]
-            profe= Profesor(nombre=nombre, apellido=apellido, email=email, profesion=profesion)
-            profe.save()
-            return render (request, "EntregableAPP/inicio.html", {"mensaje":"Profesor creado"})
-    else:
-        form= ProfeForm()
-    return render(request, "EntregableAPP/profeForm.html", {"formulario":form})
 
-
-def busquedaComision(request):
-    return render(request, "EntregableAPP/busquedaComision.html")
 
 def buscar(request):
-    if request.GET["comision"]:
+    if request.GET["dni"]:
 
-        comision=request.GET["comision"]
-        #traeme de la base, TODOS los cursos que tengan esa comision
-        cursos=Curso.objects.filter(comision=comision)
-        return render(request, "EntregableAPP/resultadosBusqueda.html", {"cursos":cursos})
+        dni=request.GET["dni"]
+        clientes=Clientes.objects.filter(dni=dni)
+        return render(request, "EntregableAPP/resultados_busqueda.html", {"clientes":clientes})
     else:
-        return render(request, "EntregableAPP/busquedaComision.html", {"mensaje":"CHE! Ingresa una comision"})
+        return render(request, "EntregableAPP/busqueda.html", {"mensaje":"Ingrese un numero de DNI"})
     
     return HttpResponse(respuesta)
+

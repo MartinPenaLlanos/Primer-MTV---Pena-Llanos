@@ -1,0 +1,27 @@
+{% extends "EntregableAPP/principal.html" %}
+
+{% load static %}
+
+{% block titulo %}
+<h1 class="mb-5">RESULTADOS DE LA BUSQUEDA</h1>
+{% endblock %}
+
+{% block contenido_que_cambia %}
+<h1>BUSQUEDA DE CLIENTES</h1>
+{% if clientes %}
+
+<ul>
+    {% for cliente in clientes %}
+        <li>{{cliente.nombre}}</li>
+        <li>{{cliente.dni}}</li>
+        <li>{{cliente.categoria}}</li>
+        <br>
+    {% endfor %}
+</ul>
+
+{% else %}
+<p>NO SE ENCONTRARON CLIENTES</p>
+
+{% endif %}
+
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends "EntregableAPP/principal.html" %}
+
+{% load static %}
+
+{% block titulo %}
+<h1 class="mb-5">RESULTADOS DE LA BUSQUEDA DE EMPLEADOS</h1>
+{% endblock %}
+
+{% block contenido_que_cambia %}
+
+<h1>BUSQUEDA DE EMPLEADOS</h1>
+{% if empleados %}
+
+<ul>
+    {% for empleado in empleados %}
+        <li>{{empleado.nombre}}</li>
+        <li>{{empleado.apellido}}</li>
+        <li>{{empleado.email}}</li>
+        <li>{{empleado.puesto}}</li>
+        <br>
+    {% endfor %}
+</ul>
+
+{% else %}
+<p>NO SE ENCONTRARON EMPLEADOS</p>
+
+{% endif %}
+
+
+{% endblock %}

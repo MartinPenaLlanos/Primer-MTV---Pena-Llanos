@@ -6,21 +6,6 @@ from EntregableAPP.forms import ClientesForm, EmpleadosForm, Nuevos_UsuariosForm
 
 # Create your views here.
 
-#def cliente(request):
-#
-#    
-#    nombre = request.POST.get("nombre")
-#    dni = request.POST.get("dni")
-#    categoria = request.POST.get("categoria")
-#    cliente = cliente(nombre=nombre, dni=dni, categoria=categoria)
-#    cliente.save()
-#    cliente=cliente(nombre="curso creado en el ejemplo", dni=0, categoria="black")
-#    print("CREANDO CLIENTE")
-#    cliente.save()
-#    
-#    texto=f"cliente creado"
-#    return HttpResponse(texto)
-
 def clientes_black(request):
     return render (request, "EntregableAPP/clientes_black.html")
 
@@ -38,10 +23,6 @@ def empleados(request):
 
 def inicio(request):
     return render (request, "EntregableAPP/inicio.html")
-
-def busqueda(request):
-    return render (request, "EntregableAPP/busqueda.html")
-
 
 
 def clientes(request):
@@ -169,14 +150,31 @@ def nuevos_usuariosForm(request):
 
 
 ########################################################################################################################################
-def busqueda(request):
+
+def busquedaclientes(request):
+    return render(request,"EntregableAPP/busquedaclientes.html")
+
+def buscarclientes(request):
     if request.GET["dni"]:
 
         dni=request.GET["dni"]
         clientes=Clientes.objects.filter(dni=dni)
-        return render(request, "EntregableAPP/resultados_busqueda.html", {"clientes":clientes})
+        return render(request, "EntregableAPP/resultados_busquedaclientes.html", {"clientes":clientes})
     else:
-        return render(request, "EntregableAPP/busqueda.html", {"mensaje":"Ingrese un numero de DNI"})
+        return render(request, "EntregableAPP/busquedaclientes.html", {"mensaje":"Ingrese un numero de DNI"})
     
     return HttpResponse(respuesta)
 
+def busquedaempleados(request):
+    return render(request,"EntregableAPP/busquedaempleados.html")
+
+def buscarempleados(request):
+    if request.GET["nombre"]:
+
+        nombre=request.GET["nombre"]
+        empleado=Empleado.objects.filter(nombre=nombre)
+        return render(request, "EntregableAPP/resultados_busquedaempleados.html", {"empleados":empleado})
+    else:
+        return render(request, "EntregableAPP/busquedaempleados.html", {"mensaje":"Ingrese el Nombre de un Empleado"})
+    
+    return HttpResponse(respuesta)

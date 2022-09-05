@@ -3,17 +3,18 @@
 {% load static %}
 
 {% block titulo %}
-<h1 class="mb-5">FORMULARIO DE BUSQUEDA DE CLIENTES </h1>
+<h1 class="mb-5">FORMULARIO DE BUSQUEDA </h1>
 {% endblock %}
 
 {% block contenido_que_cambia %}
+
 <h1>FORMULARIO DE BUSQUEDA DE CLIENTES</h1>
 
-<form action="{% url 'busqueda' %}" method="GET"> 
+<form action="{% url 'buscarclientes' %}" method="GET"> 
 
     <input type="number" name="dni" id="dni">
 
-    <input type="submit" value="buscar">
+    <input type="submit" value="Buscar Clientes">
 
 
 </form>

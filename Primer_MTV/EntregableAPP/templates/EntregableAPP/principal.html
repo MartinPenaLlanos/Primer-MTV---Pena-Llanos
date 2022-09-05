@@ -23,12 +23,14 @@
         <nav class="navbar navbar-light bg-light static-top">
             <div class="container">
                 <a class="navbar-brand" href="{% url 'inicio' %}">INICIO</a>
+                <a class="navbar-brand" href="{% url 'busquedaclientes' %}">BUSCAR CLIENTES</a>
+                <a class="navbar-brand" href="{% url 'busquedaempleados' %}">BUSCAR EMPLEADOS</a>
                 <a class="btn btn-info" href="{% url 'clientes' %}">CLIENTES</a>
-                <a class="btn btn-primary" href="{% url 'empleados' %}">EMPLEADOS</a>
-                <a class="btn btn-secondary" href="{% url 'clientesForm' %}">CLIENTES FORM</a>
+                <a class="btn btn-info" href="{% url 'empleados' %}">EMPLEADOS</a>
+                <a class="btn btn-warning" href="{% url 'clientesForm' %}">CLIENTES FORM</a>
                 <a class="btn btn-warning" href="{% url 'empleadosForm' %}">EMPLEADOS FORM</a>
+                <a class="btn btn-danger" href="{% url 'nuevosusuariosForm' %}">NUEVOS USUARIOS FORM</a>
 
-                <a class="btn btn-primary" href="#signup">REGISTRARSE</a>
             </div>
         </nav>
         <!-- Masthead-->
@@ -66,22 +68,22 @@
                     <div class="col-lg-4">
                         <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
                             <div class="features-icons-icon d-flex"><i class="bi-window m-auto text-primary"></i></div>
-                            <h3>Fully Responsive</h3>
-                            <p class="lead mb-0">This theme will look great on any device, no matter the size!</p>
+                            <h3>Responsabilidad Hacia El Usuario</h3>
+                            <p class="lead mb-0">Tenemos un canal de atencion las 24hs. para atender a nuestro usuarios en cualquier parte del mundo</p>
                         </div>
                     </div>
                     <div class="col-lg-4">
                         <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
                             <div class="features-icons-icon d-flex"><i class="bi-layers m-auto text-primary"></i></div>
-                            <h3>Bootstrap 5 Ready</h3>
-                            <p class="lead mb-0">Featuring the latest build of the new Bootstrap 5 framework!</p>
+                            <h3>Transferencias Inmediatas</h3>
+                            <p class="lead mb-0">Utilize cualquiera de nuestros metodos diposponibles para realizar transferencias al instante a cualquier hora y a cualquier lugar del mundo!</p>
                         </div>
                     </div>
                     <div class="col-lg-4">
                         <div class="features-icons-item mx-auto mb-0 mb-lg-3">
                             <div class="features-icons-icon d-flex"><i class="bi-terminal m-auto text-primary"></i></div>
-                            <h3>Easy to Use</h3>
-                            <p class="lead mb-0">Ready to use with your own content, or customize the source files!</p>
+                            <h3>Facil de Usar</h3>
+                            <p class="lead mb-0">Nuestras APPs estan diseñadas para ser amigables hacia el usuario!</p>
                         </div>
                     </div>
                 </div>
@@ -93,22 +95,22 @@
                 <div class="row g-0">
                     <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('{% static 'EntregableApp/assets/img/bg-showcase-1.jpg' %}')"></div>
                     <div class="col-lg-6 order-lg-1 my-auto showcase-text">
-                        <h2>Fully Responsive Design</h2>
-                        <p class="lead mb-0">When you use a theme created by Start Bootstrap, you know that the theme will look great on any device, whether it's a phone, tablet, or desktop the page will behave responsively!</p>
+                        <h2>Asesoria En Finanzas</h2>
+                        <p class="lead mb-0"> Asesorese con los mejores expertos en Finanzas desde nuestro canal de chat o a traves de la App. Mas de 1.000.000 de usuarios ya lo han probado y lo continuan eligiendo frente otras opciones del mercado. Contamos con los mejores analistas del mercado que podran despejar todas sus dudas!</p>
                     </div>
                 </div>
                 <div class="row g-0">
                     <div class="col-lg-6 text-white showcase-img" style="background-image: url('{% static 'EntregableAPP/assets/img/bg-showcase-2.jpg' %}')"></div>
                     <div class="col-lg-6 my-auto showcase-text">
-                        <h2>Updated For Bootstrap 5</h2>
-                        <p class="lead mb-0">Newly improved, and full of great utility classes, Bootstrap 5 is leading the way in mobile responsive web development! All of the themes on Start Bootstrap are now using Bootstrap 5!</p>
+                        <h2>Operamos Desde WallStreet</h2>
+                        <p class="lead mb-0">Contamos con oficinas alrededor de todo el mundo, siendo nuestro lugar de sede nuestras oficinas ubicadas en Wall Street, el mismisimo corazon de los negocios! </p>
                     </div>
                 </div>
                 <div class="row g-0">
                     <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('{% static 'EntregableAPP/assets/img/bg-showcase-3.jpg' %}')"></div>
                     <div class="col-lg-6 order-lg-1 my-auto showcase-text">
-                        <h2>Easy to Use & Customize</h2>
-                        <p class="lead mb-0">Landing Page is just HTML and CSS with a splash of SCSS for users who demand some deeper customization options. Out of the box, just add your content and images, and your new landing page will be ready to go!</p>
+                        <h2>Conexiones a Nivel Internacional</h2>
+                        <p class="lead mb-0">Contamos con una alta gama de contactos alrededor de todo el mundo, listos para discutir de negocios con usted! Mas de 60 años en el rubro y miles de proyectos concretados avalan nuestra reputacion</p>
                     </div>
                 </div>
             </div>
@@ -116,27 +118,27 @@
         <!-- Testimonials-->
         <section class="testimonials text-center bg-light">
             <div class="container">
-                <h2 class="mb-5">What people are saying...</h2>
+                <h2 class="mb-5">Opiniones De Nuestros Clientes</h2>
                 <div class="row">
                     <div class="col-lg-4">
                         <div class="testimonial-item mx-auto mb-5 mb-lg-0">
                             <img class="img-fluid rounded-circle mb-3" src="{% static 'EntregableAPP/assets/img/testimonials-1.jpg' %}" alt="..." />
-                            <h5>Margaret E.</h5>
-                            <p class="font-weight-light mb-0">"This is fantastic! Thanks so much guys!"</p>
+                            <h5>Milton F.</h5>
+                            <p class="font-weight-light mb-0">"He realizado proyectos de inversion alrededor de todo el mundo y nunca tuve inconvenientes. Ganancias en tiempo real garantizado"</p>
                         </div>
                     </div>
                     <div class="col-lg-4">
                         <div class="testimonial-item mx-auto mb-5 mb-lg-0">
                             <img class="img-fluid rounded-circle mb-3" src="{% static 'EntregableAPP/assets/img/testimonials-2.jpg' %}" alt="..." />
-                            <h5>Fred S.</h5>
-                            <p class="font-weight-light mb-0">"Bootstrap is amazing. I've been using it to create lots of super nice landing pages."</p>
+                            <h5>John Maynard K.</h5>
+                            <p class="font-weight-light mb-0">"Este banco es genial, me permite extender mis limites en mayor proporcion que otro bancos"</p>
                         </div>
                     </div>
                     <div class="col-lg-4">
                         <div class="testimonial-item mx-auto mb-5 mb-lg-0">
                             <img class="img-fluid rounded-circle mb-3" src="{% static 'EntregableAPP/assets/img/testimonials-3.jpg' %}" alt="..." />
-                            <h5>Sarah W.</h5>
-                            <p class="font-weight-light mb-0">"Thanks so much for making these free resources available to us!"</p>
+                            <h5>Friedrich H.</h5>
+                            <p class="font-weight-light mb-0">"Poder realizar estimaciones y proyecciones de todos mis proyectos me parece genial, me permite mantenerme dentro de lo presupuestado"</p>
                         </div>
                     </div>
                 </div>
@@ -147,7 +149,7 @@
             <div class="container position-relative">
                 <div class="row justify-content-center">
                     <div class="col-xl-6">
-                        <h2 class="mb-4">Ready to get started? Sign up now!</h2>
+                        <h2 class="mb-4">Quieres conocer mas sobre nostros?</h2>
                         <!-- Signup form-->
                         <!-- * * * * * * * * * * * * * * *-->
                         <!-- * * SB Forms Contact Form * *-->
